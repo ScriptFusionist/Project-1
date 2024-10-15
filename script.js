@@ -1,22 +1,10 @@
-// Double Tap Zoom for mobile devices
-let aiImage = document.getElementById('aiImage');
-let tapped = false;
-aiImage.addEventListener('touchend', function(e) {
-  if (!tapped) {
-    tapped = true;
-    aiImage.style.transition = 'transform 0.4s ease';
-    aiImage.style.transform = 'scale(1.2)';
-    setTimeout(() => {
-      aiImage.style.transform = 'scale(1)';
-      tapped = false;
-    }, 1000);
-  }
-});
+// Menghapus fitur double tap zoom pada gambar
+let aiImage = document.getElementById("aiImage");
 
-// Sparkle effect on image hover
-aiImage.addEventListener('mousemove', function(e) {
-  const sparkle = document.createElement('div');
-  sparkle.classList.add('sparkle');
+// Efek sparkle pada gambar saat hover
+aiImage.addEventListener("mousemove", function (e) {
+  const sparkle = document.createElement("div");
+  sparkle.classList.add("sparkle");
   sparkle.style.left = `${e.offsetX}px`;
   sparkle.style.top = `${e.offsetY}px`;
   aiImage.parentElement.appendChild(sparkle);
@@ -25,15 +13,17 @@ aiImage.addEventListener('mousemove', function(e) {
   }, 800);
 });
 
-// Ripple effect for Follow button
-const followBtn = document.querySelector('.btn-custom');
-followBtn.addEventListener('click', function(e) {
-  const ripple = document.createElement('div');
-  ripple.classList.add('ripple');
-  ripple.style.left = `${e.clientX - followBtn.offsetLeft}px`;
-  ripple.style.top = `${e.clientY - followBtn.offsetTop}px`;
-  followBtn.appendChild(ripple);
-  setTimeout(() => {
-    ripple.remove();
-  }, 600);
+// Efek ripple untuk tombol Follow dan Message
+const buttons = document.querySelectorAll(".btn-custom");
+buttons.forEach(button => {
+  button.addEventListener("click", function (e) {
+    const ripple = document.createElement("div");
+    ripple.classList.add("ripple");
+    ripple.style.left = `${e.clientX - button.offsetLeft}px`;
+    ripple.style.top = `${e.clientY - button.offsetTop}px`;
+    button.appendChild(ripple);
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  });
 });
