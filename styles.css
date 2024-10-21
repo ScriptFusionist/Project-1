@@ -65,16 +65,12 @@ body {
   margin-bottom: 15px;
 }
 
-h5.card-title {
-  font-size: calc(1.2rem + 0.5vw);
-  color: #ff1493; /* Warna pink gelap */
-}
-
 .card-title {
   font-weight: bold;
   color: #c71585; /* Warna pink lebih gelap */
   margin-bottom: 10px;
   text-shadow: 0 0 8px rgba(255, 20, 147, 0.7);
+  font-size: calc(1.2rem + 0.5vw);
 }
 
 .btn-custom {
